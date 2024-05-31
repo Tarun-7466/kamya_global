@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Digilab - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Kamya Global</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,6 +23,27 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/updated-styles.css">
+    <script>
+        // Check for success or error message and display alert
+        window.onload = function() {
+            <?php
+            // Start session
+            session_start();
+
+            // Check for success message
+            if (isset($_SESSION['success_message'])) {
+                echo "alert('{$_SESSION['success_message']}');";
+                unset($_SESSION['success_message']); // Clear the session variable
+            }
+
+            // Check for error message
+            if (isset($_SESSION['error_message'])) {
+                echo "alert('{$_SESSION['error_message']}');";
+                unset($_SESSION['error_message']); // Clear the session variable
+            }
+            ?>
+        };
+    </script>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -109,20 +130,21 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7017.754657995303!2d77.08541115143943!3d28.422958138986377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2206984f0435%3A0xf328d34ce2d12efe!2sKendriya%20Vihar%2C%20Sector%2056%2C%20Gurugram%2C%20Haryana%20122011!5e0!3m2!1sen!2sin!4v1717075574026!5m2!1sen!2sin" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
+
             <div class="row no-gutters block-9">
                 <div class="col-md-12 justify-content-center align-items-center d-flex">
-                    <form action="#" class="bg-light p-5 contact-form">
+                    <form action="form.php" method="POST" class="bg-light p-5 contact-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input name="UserName" type="text" class="form-control" placeholder="Your Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input name="Email" type="text" class="form-control" placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input name="Subject" type="text" class="form-control" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control"
+                            <textarea name="Message" id="" cols="30" rows="7" class="form-control"
                                 placeholder="Message"></textarea>
                         </div>
                         <div class="form-group">
