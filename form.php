@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // Redirect to contact.html
-    header("Location: contact.php");
+    header("Location: contact.html");
     exit();
 }
 ?>
