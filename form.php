@@ -48,12 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Send email to owner
             $mail = new PHPMailer;
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com'; // Google's SMTP server
+            $mail->Host = 'smtp.hostinger.com'; // Google's SMTP server
             $mail->SMTPAuth = true;
-            $mail->Username = 'your_gmail_account@gmail.com'; // Your Gmail address
-            $mail->Password = 'your_gmail_password'; // Your Gmail password
-            $mail->SMTPSecure = 'tls'; // Enable TLS encryption
-            $mail->Port = 587; // TCP port to connect to
+            $mail->Username = 'hello@kamyaglobal.com'; // Your Gmail address
+            $mail->Password = 'Fcgute9vK@,V'; // Your Gmail password
+            $mail->SMTPSecure = 'SSL'; // Enable TLS encryption
+            $mail->Port = 465; // TCP port to connect to
             
             $mail->setFrom($Email, $UserName); // Sender email and name from form input
             $mail->addAddress('Kamyaglobal@gmail.com', 'Kamyaglobal'); // Recipient email and name
